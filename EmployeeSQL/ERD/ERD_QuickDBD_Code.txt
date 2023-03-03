@@ -1,24 +1,24 @@
 
 Employees
 -
-emp_no PK int FK - dept_emp.emp_no
-emo_titile_id int FK >- Titles.title_id
-birth_date string
-first_name NULL string
-last_name NULL string
+emp_no PK int FK -< dept_emp.emp_no
+emo_titile_id varchar(5) FK >- Titles.title_id
+birth_date date
+first_name NULL varchar(32)
+last_name NULL varchar(32)
 sex varchar(1)
-hire_date string
+hire_date date
 
 Titles
 -
-title_id PK int 
-title UNIQUE string
+title_id PK varchar(5) 
+title UNIQUE varchar(32)
 
 
 dept_emp 
 ----
 emp_no PK int FK 
-dept_no varchar(4) FK >- departments.dept_no
+dept_no PK varchar(4) FK >- departments.dept_no
 
 
 
@@ -30,9 +30,9 @@ salary int
 departments
 ----
 dept_no PK varchar(4) 
-dept_name UNIQUE string 
+dept_name UNIQUE varchar(24) 
 
 dept_manager
 ----
 dept_no PK varchar(4) FK >- departments.dept_no
-emp_no UNIQUE int FK - Employees.emp_no
+emp_no PK  int FK - Employees.emp_no
